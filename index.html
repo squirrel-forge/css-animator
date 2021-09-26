@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+    <title>CSS-Animator</title>
+    <style type="text/css">
+        body {
+            background-color: darkgray;
+        }
+        #example {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            resize: both;
+            overflow: auto;
+            outline: 1px solid deeppink;
+            width: 50%;
+        }
+        #animation {
+            aspect-ratio: 16/9;
+        }
+        #o1 {
+            position: absolute;
+            left: 0;
+            width: 20%;
+            aspect-ratio: 4/3;
+            background-color: deeppink;
+        }
+        #o2 {
+            position: absolute;
+            right: 0;
+            width: 20%;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background-color: deepskyblue;
+        }
+        #o1::after,
+        #o2::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            content: '#o1';
+        }
+        #o2::after {
+            content: '#o2';
+        }
+    </style>
+    <link href="dist/cssanim.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div id="example">
+        <div id="animation">
+            <div id="o1"></div>
+            <div id="o2"></div>
+        </div>
+    </div>
+    <script src="dist/cssanim.js" type="text/javascript"></script>
+</body>
+</html>

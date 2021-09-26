@@ -1,0 +1,336 @@
+#cssanim {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 1.25; }
+  #cssanim * {
+    box-sizing: border-box; }
+  #cssanim-controls {
+    position: fixed;
+    top: 0;
+    right: 0; }
+  #cssanim-timeline {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 100%;
+    overflow-y: scroll; }
+  #cssanim-props {
+    position: absolute; }
+  #cssanim dialog {
+    padding: 0;
+    border: 0;
+    background-color: transparent; }
+    #cssanim dialog .cssanim__controls {
+      border-radius: 0.5em; }
+  #cssanim ul, #cssanim ol {
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0; }
+  #cssanim li {
+    display: block;
+    margin: auto;
+    padding: 0; }
+  #cssanim pre {
+    font-size: 80%; }
+  #cssanim button {
+    cursor: pointer; }
+    #cssanim button span {
+      display: inline-block;
+      vertical-align: middle; }
+  #cssanim button, #cssanim input, #cssanim select, #cssanim textarea {
+    position: relative;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    color: inherit;
+    border: 0;
+    background-color: transparent; }
+    #cssanim button:disabled, #cssanim input:disabled, #cssanim select:disabled, #cssanim textarea:disabled {
+      cursor: not-allowed; }
+  #cssanim input {
+    width: 10em; }
+  #cssanim input::-webkit-outer-spin-button,
+  #cssanim input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  #cssanim input[type=number] {
+    -moz-appearance: textfield; }
+  #cssanim ::placeholder {
+    color: lightgrey;
+    opacity: 1; }
+  #cssanim :-ms-input-placeholder {
+    color: lightgrey; }
+  #cssanim ::-ms-input-placeholder {
+    color: lightgrey; }
+  #cssanim button[name="object.move"] {
+    white-space: nowrap; }
+    #cssanim button[name="object.move"] strong, #cssanim button[name="object.move"] em {
+      display: inline-block;
+      width: auto;
+      overflow: hidden;
+      vertical-align: bottom; }
+    #cssanim button[name="object.move"] em {
+      width: 0; }
+    #cssanim button[name="object.move"]:focus strong, #cssanim button[name="object.move"]:hover strong {
+      width: 0; }
+    #cssanim button[name="object.move"]:focus em, #cssanim button[name="object.move"]:hover em {
+      width: auto; }
+  #cssanim textarea[name="css.import"],
+  #cssanim textarea[name="anim.css"] {
+    min-width: 50vw;
+    min-height: 50vh; }
+  #cssanim .cssanim__icon {
+    display: inline-block;
+    margin: 0;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle; }
+    #cssanim .cssanim__icon--text {
+      margin: -0.25em 0;
+      font-size: 140%;
+      line-height: 1;
+      width: 0.6em;
+      font-weight: bold; }
+    #cssanim .cssanim__icon:not(.cssanim__icon--text) {
+      border-radius: 0.1em;
+      box-shadow: 0 0 0.2em black; }
+    #cssanim .cssanim__icon[data-icon="logo"] {
+      background-color: deeppink; }
+    #cssanim .cssanim__icon[data-icon="object"] {
+      background-color: lime; }
+    #cssanim .cssanim__icon[data-icon="keyframe"] {
+      background-color: deepskyblue; }
+    #cssanim .cssanim__icon[data-icon="props"] {
+      background-color: gold; }
+  #cssanim .cssanim__logo, #cssanim .cssanim__title,
+  #cssanim .cssanim__actions button {
+    cursor: default;
+    display: block;
+    margin: 1em 0 0.5em;
+    padding: 0.2em 0.5em 0.3em;
+    font-weight: bold;
+    text-decoration: none;
+    color: deepskyblue;
+    text-shadow: 0 0 0.2em black;
+    transition: 0.3s ease; }
+  #cssanim .cssanim__logo,
+  #cssanim .cssanim__actions button {
+    cursor: pointer; }
+    #cssanim .cssanim__logo:hover, #cssanim .cssanim__logo:focus,
+    #cssanim .cssanim__actions button:hover,
+    #cssanim .cssanim__actions button:focus {
+      color: white; }
+  #cssanim .cssanim__controls {
+    position: relative;
+    display: flex;
+    margin: 0;
+    border-radius: 0.5em 0 0 0.5em;
+    background-color: lightgrey;
+    box-shadow: 0 0 0.2em black; }
+    #cssanim .cssanim__controls label, #cssanim .cssanim__controls button, #cssanim .cssanim__controls input, #cssanim .cssanim__controls textarea {
+      margin: 0.5em;
+      padding: 0.2em 0.4em 0.3em;
+      border-radius: 0.2em;
+      white-space: nowrap;
+      color: white;
+      background-color: deepskyblue;
+      transition: 0.3s ease; }
+    #cssanim .cssanim__controls button:hover, #cssanim .cssanim__controls button:focus, #cssanim .cssanim__controls input:not(:disabled):hover, #cssanim .cssanim__controls input:not(:disabled):focus, #cssanim .cssanim__controls textarea:hover, #cssanim .cssanim__controls textarea:focus {
+      background-color: black; }
+    #cssanim .cssanim__controls--horizontal {
+      flex-direction: row; }
+      #cssanim .cssanim__controls--horizontal > label + input,
+      #cssanim .cssanim__controls--horizontal > input + input,
+      #cssanim .cssanim__controls--horizontal > button + button {
+        margin-top: 0.5em;
+        margin-left: 0; }
+    #cssanim .cssanim__controls--vertical {
+      flex-direction: column; }
+      #cssanim .cssanim__controls--vertical > input + input,
+      #cssanim .cssanim__controls--vertical > input + label,
+      #cssanim .cssanim__controls--vertical > label + input,
+      #cssanim .cssanim__controls--vertical > label + button,
+      #cssanim .cssanim__controls--vertical > button + input,
+      #cssanim .cssanim__controls--vertical > input + button,
+      #cssanim .cssanim__controls--vertical > button + button {
+        margin-top: 0; }
+  #cssanim .cssanim__timeline {
+    display: block; }
+  #cssanim .cssanim__object {
+    position: relative;
+    display: flex;
+    margin: 0.5em 0 0;
+    align-items: center;
+    width: 100%; }
+    #cssanim .cssanim__object:first-child {
+      margin-top: 1em; }
+    #cssanim .cssanim__object::before {
+      position: absolute;
+      top: 0.5em;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 1em);
+      background-color: white;
+      box-shadow: 0 0 0.2em black;
+      content: ''; }
+    #cssanim .cssanim__object:focus-within .cssanim__keyframes::before,
+    #cssanim .cssanim__object:focus-within .cssanim__line, #cssanim .cssanim__object:hover .cssanim__keyframes::before,
+    #cssanim .cssanim__object:hover .cssanim__line {
+      opacity: 1; }
+  #cssanim .cssanim__keyframes {
+    position: relative;
+    margin: 0.5em 1em;
+    flex-grow: 1;
+    align-self: stretch; }
+    #cssanim .cssanim__keyframes::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      transform: translateY(-50%);
+      background-color: black;
+      content: '';
+      opacity: 0.3;
+      transition: 0.3s ease; }
+  #cssanim .cssanim__grid {
+    position: absolute;
+    inset: 0; }
+  #cssanim .cssanim__line {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 5%;
+    height: calc(100% - 4px);
+    opacity: 0.3;
+    transition: 0.3s ease; }
+    #cssanim .cssanim__line::before, #cssanim .cssanim__line::after {
+      position: absolute;
+      width: 1px;
+      background-color: black;
+      content: ''; }
+    #cssanim .cssanim__line::before {
+      top: 0;
+      left: 0;
+      height: 100%;
+      transform: translate(-50%, 0); }
+    #cssanim .cssanim__line::after {
+      top: 50%;
+      right: 0;
+      height: 60%;
+      transform: translate(-50%, -50%); }
+    #cssanim .cssanim__line:last-child {
+      width: auto; }
+      #cssanim .cssanim__line:last-child::after {
+        display: none; }
+    #cssanim .cssanim__line:nth-child(1) {
+      left: 0%; }
+    #cssanim .cssanim__line:nth-child(2) {
+      left: 10%; }
+    #cssanim .cssanim__line:nth-child(3) {
+      left: 20%; }
+    #cssanim .cssanim__line:nth-child(4) {
+      left: 30%; }
+    #cssanim .cssanim__line:nth-child(5) {
+      left: 40%; }
+    #cssanim .cssanim__line:nth-child(6) {
+      left: 50%; }
+    #cssanim .cssanim__line:nth-child(7) {
+      left: 60%; }
+    #cssanim .cssanim__line:nth-child(8) {
+      left: 70%; }
+    #cssanim .cssanim__line:nth-child(9) {
+      left: 80%; }
+    #cssanim .cssanim__line:nth-child(10) {
+      left: 90%; }
+    #cssanim .cssanim__line:nth-child(11) {
+      left: 100%; }
+  #cssanim .cssanim__keyframe {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+    #cssanim .cssanim__keyframe .cssanim__icon {
+      box-shadow: 0 0 0 black;
+      transition: 0.3s ease; }
+    #cssanim .cssanim__keyframe button {
+      position: absolute;
+      margin: -1px 0 0;
+      transform: translate(-50%, -50%); }
+    #cssanim .cssanim__keyframe--active button .cssanim__icon,
+    #cssanim .cssanim__keyframe button:focus .cssanim__icon,
+    #cssanim .cssanim__keyframe button:hover .cssanim__icon {
+      box-shadow: 0 0 0.2em black; }
+    #cssanim .cssanim__keyframe--active button + .cssanim__position,
+    #cssanim .cssanim__keyframe button:focus + .cssanim__position,
+    #cssanim .cssanim__keyframe button:hover + .cssanim__position {
+      opacity: 0.7; }
+    #cssanim .cssanim__keyframe--active button .cssanim__icon {
+      box-shadow: 0 0 0.2em 0.1em black; }
+  #cssanim .cssanim__position {
+    pointer-events: none;
+    position: absolute;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    top: -0.7em;
+    left: 50%;
+    padding: 0.2em 0.4em;
+    transform: translate(-50%, -100%);
+    font-size: 80%;
+    white-space: nowrap;
+    border-radius: 0.5em;
+    background-color: lightgrey;
+    box-shadow: 0 0 0.2em black;
+    opacity: 0;
+    transition: 0.3s ease; }
+    #cssanim .cssanim__position span, #cssanim .cssanim__position strong {
+      display: inline-block; }
+    #cssanim .cssanim__position[data-orientation="left"] {
+      left: 0;
+      transform: translate(-1em, -100%); }
+    #cssanim .cssanim__position[data-orientation="right"] {
+      left: auto;
+      right: 0;
+      transform: translate(1em, -100%); }
+    #cssanim .cssanim__position:focus-within, #cssanim .cssanim__position:hover {
+      opacity: 1 !important; }
+  #cssanim .cssanim__props {
+    display: flex;
+    flex-direction: column; }
+  #cssanim .cssanim__prop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; }
+    #cssanim .cssanim__prop input {
+      flex-grow: 1; }
+    #cssanim .cssanim__prop label {
+      min-width: 10em; }
+    #cssanim .cssanim__prop--time-position label {
+      min-width: 0;
+      flex-grow: 0; }
+    #cssanim .cssanim__prop label + input,
+    #cssanim .cssanim__prop input + label,
+    #cssanim .cssanim__prop input + input,
+    #cssanim .cssanim__prop input + button {
+      margin-left: 0; }
+    #cssanim .cssanim__prop label + input,
+    #cssanim .cssanim__prop input + input {
+      text-align: right; }
+    #cssanim .cssanim__prop + .cssanim__prop label,
+    #cssanim .cssanim__prop + .cssanim__prop input,
+    #cssanim .cssanim__prop + .cssanim__prop button {
+      margin-top: 0; }
+  #cssanim .cssanim__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
