@@ -12,8 +12,17 @@
     box-sizing: border-box; }
   #cssanim-controls {
     position: fixed;
-    top: 0;
-    right: 0; }
+    top: 0; }
+    #cssanim-controls[data-orientation="right"] {
+      right: 0; }
+      #cssanim-controls[data-orientation="right"] .cssanim__logo .cssanim__icon:last-child {
+        display: none; }
+    #cssanim-controls[data-orientation="left"] {
+      left: 0; }
+      #cssanim-controls[data-orientation="left"] .cssanim__logo .cssanim__icon:first-child {
+        display: none; }
+      #cssanim-controls[data-orientation="left"] .cssanim__controls {
+        border-radius: 0 0.5em 0.5em 0; }
   #cssanim-timeline {
     position: fixed;
     left: 0;
@@ -144,6 +153,8 @@
       color: white;
       background-color: deepskyblue;
       transition: 0.3s ease; }
+    #cssanim .cssanim__controls label.ws-wrap {
+      white-space: normal; }
     #cssanim .cssanim__controls button:hover, #cssanim .cssanim__controls button:focus, #cssanim .cssanim__controls input:not(:disabled):hover, #cssanim .cssanim__controls input:not(:disabled):focus, #cssanim .cssanim__controls textarea:hover, #cssanim .cssanim__controls textarea:focus {
       background-color: black; }
     #cssanim .cssanim__controls--horizontal {

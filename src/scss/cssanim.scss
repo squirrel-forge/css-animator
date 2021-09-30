@@ -24,7 +24,28 @@ $transition-default: 0.3s ease;
   &-controls {
     position: fixed;
     top: 0;
-    right: 0;
+
+    &[data-orientation="right"] {
+      right: 0;
+
+      .cssanim__logo {
+        .cssanim__icon:last-child {
+          display: none;
+        }
+      }
+    }
+    &[data-orientation="left"] {
+      left: 0;
+
+      .cssanim__logo {
+        .cssanim__icon:first-child {
+          display: none;
+        }
+      }
+      .cssanim__controls {
+        border-radius: 0 0.5em 0.5em 0;
+      }
+    }
   }
   &-timeline {
     position: fixed;
@@ -209,6 +230,9 @@ $transition-default: 0.3s ease;
         color: $color-text;
         background-color: $color-interface;
         transition: $transition-default;
+      }
+      label.ws-wrap {
+        white-space: normal;
       }
       button, input:not(:disabled), textarea {
         &:hover,

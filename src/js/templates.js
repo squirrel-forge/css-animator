@@ -232,7 +232,7 @@ export const animationImport = `
   animation: animation-1 2s ease infinite alternate;
 }
             </textarea>
-            <label>Every @keyframes object requires one resolvable selector with an animation property to import.</label>
+            <label class="ws-wrap">Every @keyframes object requires one resolvable selector with an animation property to import.</label>
             <nav class="cssanim__actions">
                 <button name="anim.import" type="button" title="Import animation CSS">
                     <span class="cssanim__icon cssanim__icon--text">${icons.import}</span>
@@ -246,11 +246,12 @@ export const animationImport = `
 export const renderCSS = `<style id="cssanim-style" type="text/css">:root</style>`;
 
 export const controls = `
-    <section id="cssanim-controls">
-        <a href="#" class="cssanim__logo">
-            <div class="cssanim__icon" data-icon="logo"></div>
+    <section id="cssanim-controls" data-orientation="right">
+        <button name="ctrl.orientation" class="cssanim__logo">
+            <div class="cssanim__icon cssanim__icon--text">${icons.left}</div>
             <span>cssanim</span>
-        </a>
+            <div class="cssanim__icon cssanim__icon--text">${icons.right}</div>
+        </button>
         <nav class="cssanim__controls cssanim__controls--vertical">
             <button name="anim.props" type="button" title="Animation global properties">
                 <span class="cssanim__icon cssanim__icon--text">${icons.edit}</span>

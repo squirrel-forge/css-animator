@@ -61,6 +61,7 @@ export class CssAnim {
         this.#dom.controls = str2node( controls, false );
         this.#dom.app.appendChild( this.#dom.controls );
         this.#dom.content = this.#dom.timeline.querySelector( '.cssanim__timeline' );
+        this.#dom.orientation = this.#dom.controls.querySelector( '[name="ctrl.orientation"]' );
         this.#dom.animProps = this.#dom.controls.querySelector( '[name="anim.props"]' );
         this.#dom.addObject = this.#dom.controls.querySelector( '[name="object.new"]' );
         this.#dom.showCSS = this.#dom.controls.querySelector( '[name="css.show"]' );
@@ -112,6 +113,12 @@ export class CssAnim {
             }, this.#drag.reset );
         } );
 
+        this.#dom.orientation.addEventListener( 'click', e => {
+            e.preventDefault();
+            const orientation = this.#dom.controls.getAttribute( 'data-orientation' )
+                === 'left' ? 'right' : 'left';
+            this.#dom.controls.setAttribute( 'data-orientation', orientation );
+        } );
         this.#dom.animProps.addEventListener( 'click', e => {
             e.preventDefault();
             this.#editAnimationProperties( this.#props );
